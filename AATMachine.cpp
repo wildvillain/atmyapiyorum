@@ -102,10 +102,6 @@ int main(){
         dogrulama1 = 0;
     }
 
-
-
-
-
     
     if (dogrulama1 && dogrulama || !dogrulama1&&dogrulama)
     {
@@ -151,7 +147,6 @@ int main(){
                                         length1 = str.length();
                                     }
                         
-                        
                         if (length1 == length && sifre == kisiselhesap[i].sifre)
                         {   
                             kisiselhesap[i].hesapokuma();
@@ -162,12 +157,7 @@ int main(){
                             std::cout<<"Sifreyi 2 kez yanlis girdiniz hesap bloklandi!";
                             return 0;
 
-                        }
-                    
-                    
-                }
-                
-                
+                        } }
                 
             }
             else if (count == MAX_KISI_SAYISI)
@@ -182,21 +172,14 @@ int main(){
             hangikisi++;
         }
 
-
-
-
-
         std::string islem1;
         int islem = 0;
-
 
         while (islem != 4)
             {
 
-                
                 int kont = 0;
-
-                
+   
                 std::cout<<"Islem seciniz: \n1. Para cekme \n2. Para yatirma \n3. Sifre degisme \n4. Cikis \nSecilen islem : ";
                 std::cin>>islem1;
                 length = islem1.length();
@@ -275,10 +258,7 @@ int main(){
                                 std::cout<<"Yanlis deger girdiniz. Ana menuye yonlendirildiniz.\n";
                             }
                             
-
-
-
-                            
+       
                             if (length1 = length)
                             {
                                 if (cikisistegi == 2)
@@ -441,11 +421,7 @@ int main(){
                               
                             }
                            else{std::cout<<"Eski sifrenizi yanlis girdiniz.\n";}
-                            
-
-
-                            
-                            
+       
                             
                         }
                         else if (islem == 4)
