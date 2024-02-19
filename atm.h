@@ -37,7 +37,7 @@ public:
             {
                 
                 atmicipara = atmicipara - s;
-                std::cout<<"İslem yapilamadi!\nLutfen daha sonra tekrar deneyiniz!\n";
+                std::cout<<"Islem yapilamadi!\nLutfen daha sonra tekrar deneyiniz!\n";
                 return 0;
             }   
             parayatirmabool = 0;
