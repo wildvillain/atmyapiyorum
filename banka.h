@@ -36,7 +36,6 @@ protected:
        else
        {
         std::cout<<"\nHesabinizdan para cekilemedi!!"<<std::endl;
-        hesapicipara = hesapicipara;
         std::cout<<"Hesabinizda kalan para miktari :"<<hesapicipara<<std::endl;
        }
        
@@ -54,24 +53,36 @@ protected:
 
     void sifredegisme(int s){
         if (s<10000 && s>999)
-        {   int sifretekrar;
-            
+        {   int kont = 0;
+            std::string sifretekrar1;
+            int sifretekrar;
+
             std::cout<<"Onaylamak icin sifreyi yeniden girin: ";
-            std::cin>>sifretekrar;
-            if (sifretekrar == s)
+            std::cin>>sifretekrar1;
+            int length = sifretekrar1.length();
+            sifretekrar = stoi(sifretekrar1);
+            std::string str =  std::to_string(sifretekrar);
+            int length1 = str.length();
+            if (length1 == length)
+            {
+                if (sifretekrar == s)
             {
                 kisisifre = s;
                 std::cout<<"\nSifre basari ile degistirilmistir!";
+                kont++;
                 
             }
             else
             {
                 std::cout<<"\nSifre degistirilemedi!!";
             }
+            }
+            
             
             
         }
         else{ std::cout<<"4 hanelik bir sifre gir!!"<<std::endl;}
+
         
     };
 
@@ -79,14 +90,6 @@ protected:
 
 
 };
-
-
-
-
-
-
-
-
 
 
 
