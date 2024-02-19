@@ -33,8 +33,8 @@ int main(){
     //Hesap şifre girip hesabı bulduğumuz kısım
     bool sayimi;
     int length = 0,length1 = 0;
-    std::string hspno1,sifre1,str;
-    int hspno,sifre;
+    std::string hspno1,sifre1,str,eskisifre1;
+    int hspno,sifre,eskisifre;
     int dogrulama = 0,dogrulama1 = 0 ;
     std::cout<<"\nHesap no gir: ";
     std::cin>>hspno1;
@@ -129,9 +129,6 @@ int main(){
                 {
                     
                     std::cout<<"\nSifreniz yanlis! Tekrar sifre giriniz : ";
-                    sifresayac++;
-                    if (sifresayac != 3)
-                    {
                         std::cin>>sifre1;
                         length = sifre1.length();
                                     for (char c : sifre1)
@@ -166,7 +163,7 @@ int main(){
                             return 0;
 
                         }
-                    }
+                    
                     
                 }
                 
@@ -196,8 +193,8 @@ int main(){
         while (islem != 4)
             {
 
+                
                 int kont = 0;
-
 
                 
                 std::cout<<"Islem seciniz: \n1. Para cekme \n2. Para yatirma \n3. Sifre degisme \n4. Cikis \nSecilen islem : ";
@@ -385,9 +382,27 @@ int main(){
 
                             ;
                         }
-                        else if (islem == 3)
-                        {
-                            
+            else if (islem == 3)
+                        {   
+                            std::cout<<"Lutfen eski sifrenizi girin.";
+                            std::cin>>eskisifre1;
+                            length = eskisifre1.length();
+                            for (char c : eskisifre1)
+                            {
+                                if(!std::isdigit(c)){sayimi = false;break;}
+                                else { sayimi = true;}
+                            }
+                            if (sayimi)
+                            {
+                                eskisifre = stoi(eskisifre1);
+                                str =  std::to_string(eskisifre);
+                                length1 = str.length();
+                            }
+                            if (length1 == length)
+                            {  
+                            if (eskisifre == kisiselhesap[hangikisi].sifre)
+                            {
+                             
                             std::cout<<"lutfen yeni sifreyi girin : ";
                             std::cin>>yenisifre1;
                             length = yenisifre1.length();
@@ -402,10 +417,6 @@ int main(){
                                 str =  std::to_string(yenisifre);
                                 length1 = str.length();
                             }
-                            
-
-
-                            
 
 
                             if (length1 == length)
@@ -425,6 +436,14 @@ int main(){
                             {
                                 std::cout<<"Ana menuye yonlendirildiniz!\n";
                             }
+                            }
+                            else{std::cout<<"Eski sifrenizi yanlis girdiniz.\n";}
+                              
+                            }
+                           else{std::cout<<"Eski sifrenizi yanlis girdiniz.\n";}
+                            
+
+
                             
                             
                             
@@ -443,11 +462,6 @@ int main(){
                 {
                     std::cout<<"Duzgun bir islem secin lutfen!!";
                 }
-                
-                
-
-            
-                
                         
             }
 
@@ -458,13 +472,23 @@ int main(){
             std::cout<<"Boyle bir hesap yoktur, cikis yapiliyor. \n";
         }
 
-
-
-   
-
-
-    std::cout<<"Boyle bir hesap yoktur.";
     return 0;
 }
 
-
+/*
+void sifredegisimi(std::string x,int y){
+                            bool sayimi;
+                            int y,length1,length;
+                            length = x.length();
+                            for (char c : x)
+                            {
+                                if(!std::isdigit(c)){sayimi = false;break;}
+                                else { sayimi = true;}
+                            }
+                            if (sayimi)
+                            {
+                                y = stoi(x);
+                                std::string str =  std::to_string(y);
+                                length1 = str.length();
+                            }            
+}*/
